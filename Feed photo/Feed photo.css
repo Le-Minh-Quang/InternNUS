@@ -1,0 +1,227 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color:#3C5999;
+}
+body{
+    min-height: 100vh;
+}
+header{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:30px;
+    background :var(--color);
+    display:flex;
+    align-items: center;
+    color: #FFFFFF;
+    z-index: 2;
+}
+header input{
+    position: absolute;
+    left:250px;
+    outline:none;
+    width:300px;
+    border-radius:2px ;
+    border: none;
+    height: 25px;
+}
+header input::placeholder{
+    color: #DCDCDC;
+}
+header h1{
+    margin: auto;
+    position: absolute;
+    left:100px;
+    color:#dcdcdc;
+    font-size:20px ;
+    text-align: center;
+}
+header img{
+    position: absolute;
+    right:200px;
+    border-radius: 50%;
+    width:30px;
+    height: 30px;
+    overflow:hidden;
+}
+header :nth-child(4){
+    position: absolute;
+    right:150px;
+}
+header :nth-child(5){
+    position: absolute;
+    right:50px;
+}
+.Container{
+    position:absolute;
+    top:30px;
+    left:0;
+    background: #F8F8F8;
+    height:1000px;
+    width:100%;
+}
+.Container .Menu{
+    position: fixed;
+    width:250px;
+    margin: 20px;
+}
+.Container .Menu ul li{
+    list-style: none;
+}
+.Container .Menu ul li a{
+    text-decoration: none;
+}
+.Container .Menu ul li:nth-child(1) a{
+   color:#3C5999;
+}
+.Container .Content{
+    position:absolute;
+    top:120px;
+    left:200px;
+    width:820px;
+    max-height:100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap:10px;
+    row-gap:10px;
+    background: #fff;
+}
+.Container .content{
+    position:absolute;
+    top:0;
+    left:200px;
+    width:820px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.Container .content .button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:120px;
+    width:100%;
+}
+.Container .Content .Cover{
+    position:relative;
+    width:400px;
+    height: 200px;
+    background: #F8F8F8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px 0px 0px 3px;
+}
+.Container .Content .Cover img{
+    position:absolute;
+    width:200px;
+    height:200px;
+    left:0;
+    top:0;
+    border-radius: 2px;
+}
+.Container .Content .Cover .Users{
+    position:absolute;
+    width:200px;
+    left:200px;
+    top:0;
+    font-size: 10px;
+}
+.Container .Content .Cover .Users img{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border: 0.5px solid black;
+    top:20px;
+    left:5px;
+}
+.Container .Content .Cover .Users a{
+    position:absolute;
+    left:60px;
+    top:25px;
+    text-decoration: none;
+    color: #3C5999;
+}
+.Container .Content .Cover .Users p{
+    position:absolute;
+    top:60px;
+    left:5px;
+}
+.Container .Content .Cover .Users i{
+    position:absolute;
+    left:5px;
+    top:172px;
+    color: #3C5999;
+} 
+.Container .Content .Cover .Users span:nth-child(5){
+    position:absolute;
+    left:20px;
+    top:170px;
+    color: #3C5999;
+}
+.Container .Content .Cover .Users span:nth-child(6){
+    position:absolute;
+    left:100px;
+    top:170px;
+    color: #BDBDBD;
+}
+.Container section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    bottom: -50px;
+    width:100%;
+    animation:animateload 5s linear infinite;
+}
+@keyframes animateload{
+0%{
+    filter: hue-rotate(0deg);
+}
+80%, 100%{
+    filter: hue-rotate(360deg);
+}
+}
+.Container section .load{
+    position: relative;
+    width:50px;
+    height:50px;
+}
+.Container section .load span{
+    position: absolute;
+    left :0;; 
+    top:0;
+    width:100%;
+    height:100%;
+    transform: rotate(calc(36deg*var(--i)));
+}
+.Container section .load span::before{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    width:15px;
+    height:15px;
+    background: #00ff0a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff0a,
+    0 0 20px #00ff0a,
+    0 0 40px #00ff0a,
+    0 0 60px #00ff0a,
+    0 0 80px #00ff0a,
+    0 0 100px #00ff0a;
+    animation:animationLoad 1s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animationLoad{
+    0%{
+        transform: scale(1);
+    }
+    80%,100%{
+        transform: scale(0);
+    }
+}
